@@ -1,1 +1,18 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'ArcadeStyle';
+  src: url('./assets/arcadeclassic/ARCADECLASSIC.TTF') format('truetype'); /* Adjust filename/extension as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  /* Define your custom color palette from the image */
+  --color-cyber-pink: #FF3E9B;
+  --color-soft-pink: #FF88BA;
+  --color-deep-teal: #3A8B95;
+  --color-neon-mint: #66D0BC;
+
+  /* Your existing font setup */
+  --font-arcade: "ArcadeStyle", system-ui;
+}

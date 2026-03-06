@@ -21,31 +21,40 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen bg-pink-300 text-white p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-blue-400">Gmail Dashboard</h1>
+        <h1 className="text-5xl font-bold mb-1 text-[#FFF58A] text-center font-arcade ">Email Scrapper</h1>
+        <p className="text-xl font-medium font-arcade mb-8 text-center text-cyber-pink ">Scrape &nbsp; Emails &nbsp; like &nbsp; a &nbsp; pro!</p>
+        <button 
+  onClick={() => window.location.href = 'http://localhost:5000/auth/google'}
+  className="absolute right-8 top-8 mb-4 bg-neon-mint text-gray-200 px-4 py-2 rounded-md font-arcade flex text-xl items-center gap-2 border-2 border-white hover:bg-deep-teal transition"
+>
+  <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" className="w-5 h-5" alt="G" />
+  Connect
+</button>
+        <hr className="h-[5px] w-full bg-deep-teal my-6"></hr>
         
         {/* Search Bar */}
         <form onSubmit={handleSearch} className="flex gap-4 mb-10">
           <input 
             type="text" 
-            placeholder="Search emails (e.g. amazon, github)..."
-            className="flex-1 p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500"
+            placeholder="Enter &nbsp; Keyword"
+            className="flex-1 p-2 rounded-sm bg-gray-200 border-2 border-deep-teal focus:outline-none focus:border-neon-mint text-cyber-pink/70 font-bold font-arcade text-2xl"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <button 
             type="submit" 
-            className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded font-semibold transition"
+            className="bg-[#FFF58A] hover:bg-yellow-300 px-6 py-3 rounded font-semibold transition text-deep-teal font-arcade"
           >
             {loading ? 'Searching...' : 'Search'}
           </button>
         </form>
 
         {/* Results Table */}
-        <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+        <div className="bg-pink-200 rounded-md overflow-hidden border border-deep-teal/70">
           <table className="w-full text-left">
-            <thead className="bg-gray-700 text-gray-300 uppercase text-sm">
+            <thead className="bg-cyber-pink text-deep-teal font-arcade text-xl uppercase text-sm">
               <tr>
                 <th className="p-4">Sender</th>
                 <th className="p-4">Subject</th>
@@ -54,13 +63,13 @@ function App() {
             </thead>
             <tbody>
               {emails.length > 0 ? emails.map((email) => (
-                <tr key={email.id} className="border-t border-gray-700 hover:bg-gray-750 transition">
-                  <td className="p-4 text-sm font-medium text-blue-300">{email.from}</td>
+                <tr key={email.id} className="border-t border-deep-teal/70 hover:bg-gray-750 transition">
+                  <td className="p-4 text-sm font-medium text-pink-500">{email.from}</td>
                   <td className="p-4 text-sm">
-                    <div className="font-semibold">{email.subject}</div>
+                    <div className="font-semibold text-deep-teal ">{email.subject}</div>
                     <div className="text-gray-400 text-xs truncate w-64">{email.snippet}</div>
                   </td>
-                  <td className="p-4 text-xs text-gray-500">{new Date(email.date).toLocaleDateString()}</td>
+                  <td className="p-4 text-xs text-pink-500 ">{new Date(email.date).toLocaleDateString()}</td>
                 </tr>
               )) : (
                 <tr>
