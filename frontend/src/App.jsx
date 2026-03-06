@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-pink-300 text-white p-8">
+    <div className="min-h-screen bg-pink-300 bg-polka-dots text-white p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold mb-1 text-[#FFF58A] text-center font-arcade ">Email Scrapper</h1>
         <p className="text-xl font-medium font-arcade mb-8 text-center text-cyber-pink ">Scrape &nbsp; Emails &nbsp; like &nbsp; a &nbsp; pro!</p>

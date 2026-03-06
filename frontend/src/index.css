@@ -16,3 +16,11 @@
   /* Your existing font setup */
   --font-arcade: "ArcadeStyle", system-ui;
 }
+
+/* Polka dot pattern over the background */
+.bg-polka-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 10%, transparent 11%),
+                    radial-gradient(rgba(255, 255, 255, 0.4) 10%, transparent 11%);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
